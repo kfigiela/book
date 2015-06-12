@@ -1,10 +1,3 @@
-My Awesome Book
-=======
-
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
-
-
-
 #The glorious Luna 1.0 Beta documentation! 
 
 Welcome to the Luna documentation. Please mind that this document is a mix of a tutorial and a formal specification and it often relies on examples and intuitive description. We strongly believe that tutorials are easier to read and understand that adequate formal documents.

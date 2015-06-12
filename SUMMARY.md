@@ -8,4 +8,5 @@
    * [Baby's first functions](babys_first_functions.md)
    * Program structure
 * [The type system](the_type_system.md)
+* Classes, objects and categories
 

@@ -6,4 +6,5 @@
 * [Diving into Luna](diving_into_luna.md)
    * [Your first program](your_first_program.md)
    * [Baby's first functions](babys_first_functions.md)
+   * Program structure
 

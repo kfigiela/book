@@ -6,7 +6,7 @@
 * [Diving into Luna](diving_into_luna.md)
    * [Your first program](your_first_program.md)
    * [Baby's first functions](babys_first_functions.md)
-   * Program structure
+   * [Program structure](program_structure.md)
 * [The type system](the_type_system.md)
 * [Classes, objects and categories](classes_objects_and_categories.md)
 * [Other](other.md)

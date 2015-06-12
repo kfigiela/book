@@ -7,4 +7,5 @@
    * [Your first program](your_first_program.md)
    * [Baby's first functions](babys_first_functions.md)
    * Program structure
+* The type system
 

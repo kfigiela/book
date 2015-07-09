@@ -1,8 +1,8 @@
 # Shortly about Luna
 
-Luna is the world's first high performance, general purpose, hybrid visual-textual programming language. 
+Luna is intended to be a production language, not a research one, incorporating at the same time many recent innovations in programming language design. It is the world's first high performance, general purpose, hybrid visual-textual programming language. 
 
-It provides a source and target independent language specification bundled with set of open-source, reusable compiler and toolchain technologies.
+Luna provides a source and target independent language specification bundled with set of open-source, reusable compiler and tool-chain technologies.
 
 ###Purely functional, multi-paradigm language
 Luna was designed from the ground up to be a high-performance, robust, enterprise solution, allowing easy creation of secure and scalable applications. Luna combines many aspects of Object-Oriented, Data-Flow and purely Functional programming into a new Category Programming paradigm. It provides higher-order functions, non-strict semantics, user-defined algebraic data types, structural subtyping, advanced type inferencer, a rich set of primitive datatypes and support for dependent type programming. Moreover Luna introduces few new concepts, including variant type system, data-flow error handling or automatic monad management.

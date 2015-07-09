@@ -7,7 +7,7 @@ Please mind that both the official Luna compiler as well as this documentation c
 
 This specification describes both the Luna specification, including syntactic and semantic rules as well as the current status of the Luna compiler. If a language element is not yet fully supported by the compiler, appropriate note is included in this document.
 
-We love to receive your feedback. This will help us refine the language and decide on priorities of its evolution.
+We love to receive your feedback. This will help us refine the language and decide on priorities of its evolution. You can use the official GitHub repository to report bugs, ideas and new language proposals.
 
 ## About this document
 This document covers the textual Luna representation and the official Luna compiler ecosystem. The visual representation can be used with the Luna Graphical Environment (LGE) and will be covered in a separate document.

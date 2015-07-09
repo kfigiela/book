@@ -1,14 +1,5 @@
 # Diving into Luna
 
-
-
-
-
-
-
-
-
-
 #Naming
 
 ##Values and types

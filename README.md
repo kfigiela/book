@@ -4,7 +4,7 @@ Welcome to the Luna documentation. Please mind that this document is a mix of a 
 
 ###What is Luna?
 
-Luna is a programming language and an extensive ecosystem of tools. It is intended to be a production language, not a research one, incorporating at the same time many recent innovations in programming language design. It is the world's first high performance, general purpose, hybrid visual-textual programming language. You can learn more about Luna core assumptions here: [This link works.](../about_luna.md)
+Luna is a programming language and an extensive ecosystem of tools. It is intended to be a production language, not a research one, incorporating at the same time many recent innovations in programming language design. It is the world's first high performance, general purpose, hybrid visual-textual programming language. You can learn more about Luna core assumptions here: [This link works.](shortly_about_luna.md)
 
 ###Current state of the art
 Please mind that both the official Luna compiler as well as this documentation concern Luna first public release. We have done an enormous amount of work to bring Luna to the reality, however, by no means neither the tool-set nor documentation could be considered to be complete. Its foundations (as described below) are done, however there are many of minor details to be added in.

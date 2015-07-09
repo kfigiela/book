@@ -1,14 +1,15 @@
 # Diving into Luna
 
-#Naming
 
-##Values and types
+
+#Values and types
 Every expression in Luna evaluates to a value and has a static type. Values and types are mixed in Luna.
 
-##Naming rules {#naming_rules}
+
+#Naming rules {#naming_rules}
 Luna incorporates few simple naming conventions. There are two identifier types:
 
-Lowercase variable identifiers
+* Lowercase variable identifiers
 : Lowercase identifiers can be used as variable or function names. Lowercase identifiers constitute any nonempty sequence of letters, starting with a lowercase one. Both characters `_` and `?` are considered lowercase letters.
 
 Uppercase type identifiers

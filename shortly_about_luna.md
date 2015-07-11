@@ -1,6 +1,6 @@
 # Shortly about Luna
 
-Luna is intended to be a production language, not a research one, incorporating at the same time many recent innovations in programming language design. It is the world's first high performance, general purpose, hybrid visual-textual programming language. 
+Luna is intended to be a production language, not a research one, incorporating at the same time many recent innovations in programming language design. It is the world's first high performance, general purpose, hybrid visual-textual programming language.
 
 Luna provides a source and target independent language specification bundled with set of open-source, reusable compiler and tool-chain technologies.
 

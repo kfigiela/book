@@ -59,7 +59,7 @@ Vector Int
 ```
 
 ##Variant types
-Sum types are uncommon in popular programming language nowadays. You can find some languages supporting this f The values of a sum type are grouped into several variants. A value of a variant type can be created using a variant constructor. Each variant has its own constructor, which takes a specified number of arguments with specified types. 
+Sum types are uncommon in popular programming language nowadays. You can find some languages supporting this f The values of a sum type are grouped into several variants. A value of a variant type can be created using a variant constructor. Each variant has its own constructor, which takes a specified number of arguments with specified types.
 Lets start with a very simple sum type and see, how the `Bool` type is defined in Luna's standard library.
 ```ruby
 class Bool: True
@@ -82,7 +82,7 @@ You know that pattern, doesn't you? Tthe code `True && False` is evaluated to `T
 ```ruby
 class Bool:
     True, False
-    
+
     def && v:
         if self == v then True
                      else False
@@ -128,10 +128,10 @@ You should be careful when digging into Luna, not to confuse variables and type 
 >> :t a
 a :: Maybe a
 ```
-Let's focus on the last line: `a :: Maybe a`. On the left side of type annotation operator there is an `a` variable. On the other hand, there is also type variable `a`  on the right side of the operator, but keep in mind that these are completely distinct variables. The former one indicates a value, while the later a type. 
+Let's focus on the last line: `a :: Maybe a`. On the left side of type annotation operator there is an `a` variable. On the other hand, there is also type variable `a`  on the right side of the operator, but keep in mind that these are completely distinct variables. The former one indicates a value, while the later a type.
 
 Luna is a dependent type language, so it is possible to mix variables and type variables. You will learn how to use this machinery in later chapters.
- 
+
  --------
 There is however one important thing to keep in mind. Luna will reject any explicit type signature, that is not as specific as possible:
 ```ruby
@@ -159,7 +159,7 @@ The following sections describe all the building rules for contexts. You will le
 Luna supports two types of context constrains -- equality and application one. You can combine them to express any possible type relation.
 
 ######Equality constrains
-Equality constrains allow constraining values of two type expressions to the same type. In the most primitive form, we can set equality constrain between two type variables using the equality constrain operator `=`, for example to constrain elements of tuple to have the same type, we can use the following type description: `t :: (a,b) | a = b`. Such simple use case does not make much sense though, because it is the same as writing `t :: (a,a)`. 
+Equality constrains allow constraining values of two type expressions to the same type. In the most primitive form, we can set equality constrain between two type variables using the equality constrain operator `=`, for example to constrain elements of tuple to have the same type, we can use the following type description: `t :: (a,b) | a = b`. Such simple use case does not make much sense though, because it is the same as writing `t :: (a,a)`.
 
 #####Application constraints
 Application constrains allow expressing that two types depend on each other, because one is a result of a method call on the other. The application constrain syntax is very simmilar to normal function calls in Luna. Lets focus on the example from the beginning of this section. We can express the full type of `foo`  using explicit secondary context as follow `func :: a -> b || a.foo = b`. It means, that this function takes any value of type `a` and results value of type `b`, where `b` is a type of value resulted from calling method `foo` from class of type `a`.
@@ -176,7 +176,7 @@ Formally, we call it the bottom value. If Luna program evaluates the undefined v
 
 Because Luna is a lazy language, you can use undefined values in computations, that does not evaluate them:
 ```ruby
->> lst = [undefined, undefined] 
+>> lst = [undefined, undefined]
 >> print lst.length
 2
 >> print lst
@@ -190,7 +190,7 @@ You should not use `undefined` in any final, production ready code. Exceptions i
 
 
 ##Variant types
-The type system in Luna hovewer was build on completely different basis than the type systems you can find in most (if not all) available languages. We call it the variant type system. It is a generalization of algebraic data types, existential types and compositable algebraic datatypes. 
+The type system in Luna hovewer was build on completely different basis than the type systems you can find in most (if not all) available languages. We call it the variant type system. It is a generalization of algebraic data types, existential types and compositable algebraic datatypes.
 
 ##Type conversion
 Luna provides safe value conversion utilities between ... TODO
@@ -207,7 +207,7 @@ Int :: *
 [] :: * -> *
 ```
 
-The `* -> *` kind means, that `[]` is a type level function and needs one more argument to be a fully applied type. You can think about it like about a type constructor, that need some arguments to become a type. Type level functions are just like regular functions, but they are feed by types instead of values. Only fully applied types can describe values in Luna. You cannot have a value with type `[] :: * -> *`, but you can have one with type `[a] :: *` for example. 
+The `* -> *` kind means, that `[]` is a type level function and needs one more argument to be a fully applied type. You can think about it like about a type constructor, that need some arguments to become a type. Type level functions are just like regular functions, but they are feed by types instead of values. Only fully applied types can describe values in Luna. You cannot have a value with type `[] :: * -> *`, but you can have one with type `[a] :: *` for example.
 
 Luna supports both type level as well as kind level programming. You can also use kinds in order to set some type level restrictions, they are called data kinds. You will learn more about it in the Type level programming chapter.
 
@@ -236,10 +236,10 @@ Luna provides several ways to express `Int` literals, following the common conve
 ####UnboundInt
 `UnboundInt` is like `Int`, but it's not bounded, so can be used to represent even very big numbers. You should keep in mind, that `Int` is more efficient though.
 ```ruby
->> def factorial n::UnboundInt: 
+>> def factorial n::UnboundInt:
 >>     product [1..n]
 >> factorial 50
-30414093201713378043612608166064768844377641568960512000000000000  
+30414093201713378043612608166064768844377641568960512000000000000
 ```
 ####Real
 `Real` represents real numbers in the best possible precision. It is defined just as a type alias to `Double`.
@@ -295,7 +295,7 @@ a = (5, 5.0, "five") :: (Int, Float, String)
 ####Bool
 A boolean type. It can only have two values — `True` and `False`.
 
-###Lists 
+###Lists
 A list is a sequence of elements of a single type, called the element type. The number of elements is called the length -- it is representable by a value of type `Int` and is never negative.
 List can be either finite or infinite. Luna provides support for the list literals -- they have a form of a comma-separated elements sequence enclosed with brackets.
 
@@ -341,7 +341,7 @@ The binary `|` operator allows prepending element to the list and it is a very f
 A string is a list of Unicode characters. Strings can be spanned across multiple lines. All three popular line-endings (`CR`, `CRLF`, `LF`) are treated as a single `LF` byte, so multi-line strings behave always the same across the platforms. String is implemented using Luna list type, allowing at the same time all list-specific operations to be performed, including concatenation, length checking or index-based character accessing. Luna supports two type of string literals - regular and raw ones.
 
 #####Regular String literal
-Regular String literals are expressed as a char sequence enclosed in quotes `" "`. Escaping rules as described in Char section apply. 
+Regular String literals are expressed as a char sequence enclosed in quotes `" "`. Escaping rules as described in Char section apply.
 ```ruby
 "Hello world!\n"
 "Привет!"
@@ -353,17 +353,17 @@ Regular String literals allow special syntax for accessing values from surroundi
 ```ruby
 >> myName = "Joe"
 >> names = ["Tim", "John"]
->> txt = "Hello! My name is $myName. 
+>> txt = "Hello! My name is $myName.
 >> These ${names.length} guys are ${names.join "and"}.
 >> print txt
 "Hello! My name is Joe.
 These 2 guys are Tim and John"
-``` 
+```
 
 After evaluating every String expression, the `toString` method is called on the result before concatenating with the rest of the text.
 
 #####Raw String literals
-Raw string literals are character sequences between triple quotes `""" """`. Within the quotes, any character is legal except sequence of three quotes. The value of a raw string literal is the string composed of the uninterpreted (implicitly UTF-8-encoded) characters between the quotes; in particular, backslashes and dollars have no special meaning. 
+Raw string literals are character sequences between triple quotes `""" """`. Within the quotes, any character is legal except sequence of three quotes. The value of a raw string literal is the string composed of the uninterpreted (implicitly UTF-8-encoded) characters between the quotes; in particular, backslashes and dollars have no special meaning.
 
 
 #Class extensions
@@ -373,7 +373,7 @@ Luna allows us to modify an existing class definition in two forms, by adding a 
  - If we want to add additional logic to a definition placed in external module that is either closed source or that we do not want to change for any other reason.
 
 ##Extension methods
-Extensions methods 
+Extensions methods
 Czy na pewno chcemy miec nowe metody pojawiajace sie w obiektach gdy cos importujemy? Troche jak classtypy w Haskellu - moze chcemy? W sumie cala stdlib na tym stoi.
 Z drugiej storny mamy slaba kontrole przenikania definicji - moze warto wprowadzic obok slowka import slowko using?
 
@@ -393,11 +393,11 @@ class Foo:
 dodatkowo dziala inaczej niz extenoiosn methods poniewaz nie podmienia definicji tylko tworzy nowa
 
 #Functions
-Functions in Luna are first class citizens. It means, that you can create unnamed functions, pass functions to other ones or return them as a result. Functions support many features including partial application, default values or named and unnamed arguments. 
+Functions in Luna are first class citizens. It means, that you can create unnamed functions, pass functions to other ones or return them as a result. Functions support many features including partial application, default values or named and unnamed arguments.
 
 
 ##Function type
-Functions in Luna also have types. Function type is written as follows: `Parameters -> ReturnType`. Parameters are comma separated list of types within braces. If function accepts only a single argument, braces can be omitted. In Luna every function returns a value. In particular this value can be an empty tuple, which is common pattern for functions that should not return any value. 
+Functions in Luna also have types. Function type is written as follows: `Parameters -> ReturnType`. Parameters are comma separated list of types within braces. If function accepts only a single argument, braces can be omitted. In Luna every function returns a value. In particular this value can be an empty tuple, which is common pattern for functions that should not return any value.
 
 ```ruby
 {Int, Int} -> Int       # function taking two Ints and returning Int
@@ -409,7 +409,7 @@ c -> ()                 # function taking argument of any value and returning no
 ```
 The `->` operator has low precedence and is right-associative, taking in consideration a function returning other function, we can show its type like `a -> b -> c` or `a -> (b -> c)`.
 
-If we consider only these functions, which operate on integers, the type of `+` function would be `{Int, Int} -> Int`, which means, that the function takes two arguments, each of type `Int` and results also in value of type `Int`. 
+If we consider only these functions, which operate on integers, the type of `+` function would be `{Int, Int} -> Int`, which means, that the function takes two arguments, each of type `Int` and results also in value of type `Int`.
 
 ##Function definitions
 Functions are defined using the `def` keyword. While defining a function, you can provide the type informations both externally as well as internally in a definition:
@@ -478,7 +478,7 @@ def main:
     print size              # Length 50
     test   = width / height # error
 ```
-    
+
 
 
 #Expressions
@@ -514,10 +514,10 @@ More complex example with a sample type follows:
 ```ruby
 class Point :
     x,y :: Int
- 
+
 def mousePos self:
     Point 50 75 #just a sample...
- 
+
 def main self :
 Point _ yPos  = self.mousePos  #yPos is now 75
 ```

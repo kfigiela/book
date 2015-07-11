@@ -1,6 +1,6 @@
 # Category Oriented Programming
 
-We introduce the Category Oriented Programming paradigm. You can think of it like about a generalization of Object Oriented Programming mixed with purely Functional one in a world of dependent types. 
+We introduce the Category Oriented Programming paradigm. You can think of it like about a generalization of Object Oriented Programming mixed with purely Functional one in a world of dependent types.
 
 Category Programming paradigm bases on the concepts of `objects` and `categories`. The former are immutable data structures, while the later are used to classify objects based on their properties and behaviors. Objects and categories allow expressing composite type relations including all forms of algebraic data-types. Formally objects are product types, while categories can be used to build sum types. Category Programming paradigm disallows any form of inheritance, using composition as its basic data building mechanism.
 

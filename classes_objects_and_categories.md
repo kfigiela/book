@@ -45,7 +45,7 @@ class Student:
             print "Hello! My name is $name."
 ```
 
-As you can see, if a class consist of single variant only, Luna allows shorter definition syntax. Every field and method declared in the class level is just copied to the variant definition. If you declare many variants within a single class, Luna copies the class-level definitions to each of them. 
+As you can see, if a class consist of single variant only, Luna allows shorter definition syntax. Every field and method declared in the class level is just copied to the variant definition. If you declare many variants within a single class, Luna copies the class-level definitions to each of them.
 
 So what does it mean that class contains objects sharing similar properties? To answer that question, lets look at the `Bool` definition from Luna's standard library:
 
@@ -102,7 +102,7 @@ class Path:
 
 Luna will reject the above code, because both `Rectangle` as well as `Circle` were defined earlier in this module, while variants always create new types of objects. But there is a simple way we can tell Luna to use the earlier defined ones:
 ```ruby
-class Path: 
+class Path:
     @Rectangle
     @Circle
     Segment: sx sy ex ey :: Float
@@ -154,7 +154,7 @@ The `{Rectangle, Circle, Segment}` is a set of types and is used to define the n
 Each variant has its own so called Base Class. It is a class that accepts objects of that particular variant only.
 
 kazdy variant deklaruje swoj typ i swoja base cateogry zawierajaca tylko wartosci bedace nim samym lub innymi jego wartosciami. (np do Inta mozemy przekzac 1,2,3,.. lub Inta). Przeniesc przyklady i kawalki opisow z kolejnego czapteru
-TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO 
+TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
 
 ##Existential types
 Each variant defines a distinct type. That type describes a class of objects of that particular variant type. Luna tracks the usages of every variant and uses this information for better reasoning about the data flow. This is why if you ask Luna about a type of a well defined object, you often get a type that looks exactly or very similar to the investigated expression:

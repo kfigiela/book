@@ -15,7 +15,7 @@ Each Luna source file needs to have a name starting with an upper-case letter, f
 The language is bundled with a command line tool `luna`, which is an interface for the family of utilities from Luna's ecosystem including compiler, interactive interpreter, repository manager, code assistance or documentation manager.
 
 ####Building the sources
-To build the program, type `luna Main` in your shell. The file extension can be omited when building the program. The command executes the Luna compiler, which reads the sources, compiles the code into target platfrom and links the resulting program with the Luna's standard library.  To The result is saved in an executable named `Main` (or `Main.exe` on Windows).
+To build the program, type `luna Main` in your shell. The file extension can be omitted when building the program. The command executes the Luna compiler, which reads the sources, compiles the code into target platform and links the resulting program with the Luna's standard library.  To The result is saved in an executable named `Main` (or `Main.exe` on Windows).
 
 To run the program simply type `./Main` (or just `Main` on Windows). As a result you should get output as shown below:
 ```Ruby

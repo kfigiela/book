@@ -1,3 +1,15 @@
+ --------
+There is however one important thing to keep in mind. Luna will reject any explicit type signature, that is not as specific as possible:
+```ruby
+>> lst = [] :: x
+**ERROR**
+Luna interactive 1:12: Provided type `x` is not as specific as possible: `[]`.
+```
+
+--- opisac maybe
+
+
+
 # Other
 
 ##Interfaces

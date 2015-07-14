@@ -13,8 +13,8 @@ This specification describes both the Luna specification, including syntactic an
 
 We love to receive your feedback. This will help us refine the language and decide on priorities of its evolution. You can use the official GitHub repository to report bugs, ideas and new language proposals.
 
-## About this document
-This document covers the textual Luna representation and the official Luna compiler ecosystem. The visual representation can be used with the Luna Graphical Environment (LGE) and will be covered in a separate document.
+## About this book
+This book covers the textual Luna representation and the official Luna compiler ecosystem. The visual representation can be used with the Luna Graphical Environment (LGE) and will be covered in a separate document. This documentation was written to describe and explain all the concepts in an easy and accessible way for wide range of people.
 
 
 

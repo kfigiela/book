@@ -3,20 +3,17 @@
 
 
 #Values and types
-Every expression in Luna evaluates to a value and has a static type. Values and types are mixed in Luna.
-
+Every statement in Luna is an expression what means that it evaluates to a value and has a static type. Values and types are mixed in Luna. **!KF: Napisac ze konsekwencja tego jest to ze if musi miec else**
 
 #Naming rules
 Luna incorporates few simple naming conventions. There are two identifier types:
 
-* **Lowercase variable identifiers** <br/>
-Lowercase identifiers can be used as variable or function names. They constitute any nonempty sequence of letters, starting with a lowercase one. Both characters `_` and `?` are considered lowercase letters.
+* **Identifiers starting with lowercase letter** can be used as variable or function names. They constitute any nonempty sequence of letters, starting with a lowercase one. Both characters `_` and `?` are considered lowercase letters.
 
-* **Uppercase type identifiers** <br/>
-Uppercase identifiers can be used as both concrete type names as well as type constructor names. Uppercase identifiers constitute any nonempty sequence of letters, starting with an uppercase one.
+* **Identifiers starting with uppercase letter** can be used as both concrete type names as well as type constructor names. They constitute any nonempty sequence of letters, starting with an uppercase one.
 
 ##Operators
-Luna allows some names to be declared as operators. Operator is just like a regular function, but it is implicitly parsed as infix one if not used with qualified name. To declare an operator you can declare a function as an operator or construct the name using any nonenmpty sequence of the following character set: `$ % & * + / < = > \ \ ^ | - ~`.
+Luna allows some names to be declared as operators. Operator is just like a regular function, but it is implicitly parsed as infix one if not used with qualified name. To declare an operator you can declare a function as an operator or construct the name using any nonenmpty sequence of the following character set: `$ % & * + / < = > \ \ ^ | - ~`. For instance `<$$>`, `%`, `<%>`, and `~-|<>+` are valid operator names.
 
 
 ##Multi-segment names

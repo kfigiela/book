@@ -18,11 +18,14 @@ The language is bundled with a command line tool `luna`, which is an interface f
 To build the program, type `luna Main` in your shell. The file extension can be omitted when building the program. The command executes the Luna compiler, which reads the sources, compiles the code into target platform and links the resulting program with the Luna's standard library.  To The result is saved in an executable named `Main` (or `Main.exe` on Windows).
 
 To run the program simply type `./Main` (or just `Main` on Windows). As a result you should get output as shown below:
-```Ruby
+
+```ruby
 "Hello world!"
 ```
 
 Oh, wait a minute! Why the output is enclosed in quotes? For now, just remember that the `print` function works this way — you will learn about why later. If you want to output the text without the quotes, use `puts` instead.
+
+#### Building for other platforms
 
 Luna chooses the `native` target platform unless stated otherwise. You can choose different platform using the `--target` option. In order to run the example in a web browser, you can compile it to JavaScript using `luna --target js Main` instead.
 

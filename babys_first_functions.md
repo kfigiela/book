@@ -1,13 +1,12 @@
 # Baby's first functions
 
-In the previous section we got a basic feel for calling a function, now it's time to learn how to create one!
-
-The detailed function evaluation model is described in following chapters. For now, just assume that in most cases you do not need any parentheses in Luna expressions, but sometimes it is just more convenient to use ones.
+In the previous section we got a basic feel for calling a function, now it's time to learn how to create one. The detailed function evaluation model is described in following chapters. For now, just assume that in most cases you do not need any parentheses in Luna expressions, but sometimes it is just more convenient to use ones.
 
 
 ####Luna interactive shell
 Let's run a new interactive Luna session by invoking `luna shell` or just `luna` without any parameters:
-```Ruby
+
+```ruby
 $ luna
 Luna Shell 1.0 Alpha
 Type "help" to get more info
@@ -20,7 +19,7 @@ The Luna shell runs the Luna interpreter allowing interactive code evaluation an
 ####Objects and methods
 Let me take a closer look at the following session:
 
-```Ruby
+```ruby
 $ luna
 Luna Shell 1.0 Alpha
 Type "help" to get more info
@@ -31,42 +30,41 @@ Type "help" to get more info
        4
 ```
 
-
 Luna uses the dot-notation to access methods associated with values. As you can see, the functions `inc` and `dec` are members of the `5` object. We can provide arguments to functions simply separating them by spaces, like in the following code snippet:
 
-```Ruby
+```ruby
 λ: print 5.+ 6
    11
 ```
 
 One thing to note here is the usage of the `print` function. It is declared with a very low precedence level, thus you do not have to use any parenthesis in the expression. This way the code `print 5.+ 6` is the same as `print (5.+ 6)`.
 
-Let's look at the code one more time ... you are right! The name of the function in this example is `+`! As was explained in the [Naming conventions](#naming_conventions) section, the `+` is just an operator name and it is used with explicit qualification in this example, so it is not treated as an infix call. We can of course write the following expression instead:
+Let's look at the code one more time… you are right! The name of the function in this example is `+`! As was explained in the [Naming conventions](#naming_conventions) section, the `+` is just an operator name and it is used with explicit qualification in this example, so it is not treated as an infix call. We can of course write the following expression instead:
 
-```Ruby
+```ruby
 λ: print 5 + 6
    11
 ```
 
-but this time we call a function `+` available in the current scope instead of the method `+` of the object `5`. In fact, the `+` function is provided by the standard library, having the following definition:
+but this time we call a function `+` available in the current scope instead of the method `+` of the object `5`. In fact, the `+` function is provided by the standard library and has the following definition:
 
-```Ruby
+```ruby
 def a + b:
     a.+ b
 ```
 
-All other arithmetic operators like `+`, `-`, `*`, `/`, etc. are defined in the same fashion in Luna. It allows new data types to use operators simply by declaring appropriate methods.
+All other arithmetic operators like `+`, `-`, `*`, `/`, etc. are defined in the same fashion in Luna. New data types may use operators by simply declaring appropriate methods.
 
 
 ###Function evaluation
 
-You should keep in mind that there is no such keyword in Luna like `return`, which allows immediately returning a value from function. The result of a function is always the value of the last statement. There is though a design proposal introducing such functionality, so it might appear in a future Luna release. For now the `return` name is reserved for further compatibility.
+The result of a function is always the value of the last statement. You should keep in mind that there is no such keyword in Luna like `return`, which allows immediately returning a value from function. There is though a design proposal introducing such functionality, so it might appear in a future Luna release. For now the `return` name is reserved for further compatibility.
 
 ####Function composition
 
 Lets take a look at a little more complicated example:
 
-```Ruby
+```ruby
 1 λ: [1..].each random . take 3
      [7917908265643496962,-2493721835987381530,5541392136091291592]
 ```
@@ -75,14 +73,14 @@ There are two things to note in the code. The first one is how the `each` and `t
 
 The above code could also be written as:
 
-```Ruby
+```ruby
 2 λ: ([1..].each random).take 3
      [7917908265643496962,-2493721835987381530,5541392136091291592]
 ```
 
 but not as:
 
-```Ruby
+```ruby
 3 λ: [1..].each random.take 3
   *: Function `random` does not provide member `take`.
   *: Function `List.each` should take only one argument, but is provided with two.
@@ -90,15 +88,15 @@ but not as:
 
 As you can see, prefixing the dot accessor with whitespace characters lowers its precedence level. Any name followed immediately by dot has a very high one instead. The above code was parsed by Luna the following way:
 
-```Ruby
+```ruby
 [1..].each (random.take) 3
 ```
 
 ####Lazy evaluation
 
-Let's go back to our original example!
+Let's go back to our original example.
 
-```Ruby
+```ruby
 λ: [1..].each random . take 3
    [7917908265643496962,-2493721835987381530,5541392136091291592]
 ```

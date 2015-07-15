@@ -16,7 +16,7 @@ The field declaration consist always of field's name followed by explicit type i
 
 ```ruby
 object Point:
-    x y :: Float
+    x y :: Real
 ```
 
 ###Algebraic data types
@@ -144,6 +144,12 @@ Object types could be similar to classes from Object Oriented paradigm, however 
 Lets assume, we want to provide some animation support in our library, so our objects could travel a predefined path. The path can be either a rectangle, circle or a segment between two points. We could try to define `Path` the following way:
 
 ```ruby
+object BasicShape:
+    pos :: Point = new Point 0 0
+
+    Circle:    radius       :: Float
+    Rectangle: width height :: Float
+
 object Path:
     Circle:    pos          :: Point = new Point 0 0
                radius       :: Float
@@ -157,6 +163,12 @@ Luna will reject the above definition, because both variants `Rectangle` and `Ci
 Luna does not support inheritance, but it allows overlapping classes instead.  It means, that a single object can belong to many classes at the same time. As we've mentioned earlier each object type is in fact a class definition, so the variants can be shared across multiple object definitions as well! You can use the `include` block exactly for this purpose. Every variant enumerated within the block will be included in the category of objects described by that particular object type.
 
 ```ruby
+object BasicShape:
+    pos :: Point = new Point 0 0
+
+    Circle:    radius       :: Float
+    Rectangle: width height :: Float
+
 object Path:
     include: Rectangle Circle
     Segment: start end :: Point

@@ -14,7 +14,7 @@ Formally, objects are data structures containing data in the form of fields. The
 ###Classes
 Classes are used to classify objects based on their properties and behaviors. Formally classes derive from Category theory. Each class is a category containing objects and their methods, formally called arrows. You can think of a class like about a set of objects and related transformations. This set can be defined explicitly, like all the even integer numbers or implicitly by behaviors, like all the objects, which can be mapped by a given function. Classes can be composed together to create a new class of objects with common behaviors.
 
-Each object can belong to many classes at the same time. In fact every object in Luna belongs to an infinite number of classes. Some of them are explicitly labeled like `Int`, but some are not like all the even integer numbers. In particular every object belongs to the so called unit-class – a class containing that single object only. 
+Each object can belong to many classes at the same time. In fact every object in Luna belongs to an infinite number of classes. Some of them are explicitly labeled like `Int`, but some are not like all the even integer numbers. In particular every object belongs to the so called unit-class – a class containing that single object only.
 
 In general, there is an infinite universe of different objects, often with unrelated behaviors. If we do not know anything about a particular object, we cannot use it in any sensible way. Let's take the taxi cab as an example. If we do not know that this particular object is a taxi cab, we cannot ask it to drive us home. We could do another thing instead. We can tell it – if you are a taxi cab, drive us home. This behavior is formally named the structural sub-typing and it is allowed by the type system in Luna.
 
@@ -48,7 +48,7 @@ A class an object inherits behavior from is called its type. Sub- and super-clas
 
 
 #### Type universes
-Everything in Luna has a type. Even types have types and the types of types also have types. In fact every type has an infinite chain of other types, that it belongs to.  Of course you can define such type by yourself! 
+Everything in Luna has a type. Even types have types and the types of types also have types. In fact every type has an infinite chain of other types, that it belongs to.  Of course you can define such type by yourself!
 
 Lets investigate it using the Luna Shell! You can query the compiler for a type of a particular expression using either the `type of` function or the more verbose `:t` shell command.
 
@@ -76,7 +76,7 @@ Oh, that is really interesting! As we can see, each type has it's own type and t
 
 ```ruby
 λ: types of 2
-   2 :: Int :: Real :: Complex :: Number :: * :: ..
+   2 :: Int :: Real :: Complex :: Quaternion :: Octonion :: Sedenion :: Number :: * :: ..
 ```
 
 This type means that every `2` has type `2`. This type has type `Int`, which subsequently has type `Real`. Every `Real` value is also a `Complex` number. The `Complex` type contains both the real as well as imaginary numbers and its type is simply `Number`. The `*` is so called the "star type". It is just a category containing all possible objects and types.
@@ -113,7 +113,7 @@ In the same fashion it is valid in Luna to tell that `Int` is a subset of `Int` 
 λ: String + Int
    String
 λ: Int.show
-   String 
+   String
 ```
 This is a very powerful mechanism. It can be used for both type level programming as well as to bulk-process all values from a specific category. Lets assume we've got a heterogeneous dictionary and we want to obtain all the values, whose key is an integer. We can accomplish it by using the `values` method available in every category:
 

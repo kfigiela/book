@@ -1,25 +1,24 @@
 # Program structure
 
-##Entities
 Luna programs are built out of six entities:
 
 * **Types and type universes** <br/>
 Type describes a valid set of values of a particular variable or expression. Type classifies objects by their properties and behaviors. Types in Luna are in fact values in a higher universe than objects, so every type has it's own type as well.
 
 * **Modules** <br/>
-Module is a collection of definitions in an environment created by a set of imports. Modules in Luna are reflecting the source files hierarchy. To learn more about modules, read the [Modules](#modules) chapter.
+Module is a collection of definitions in an environment created by a set of imports. Hierarchy of modules reflects the hierarchy of source files. You will learn more about modules in the [Modules](#modules) chapter.
 
 * **Definitions** <br/>
 Definition describes top level entity, such as a function or a data type. Definitions can be placed in modules or nested inside other definitions as their sub-definitions.
 
 * **Expressions** <br/>
-Expression allows describing data dependencies and the necessary transformations in order to compute desired value.
+Expression describes data dependencies and the necessary transformations in order to compute desired value.
 
 * **Patterns** <br/>
 Pattern provides mechanism for data-type decomposition. They can be used in several placess across the code, including function headers and expressions.
 
 * **Objects** <br/>
-Object is a value with associated type. Objects are immutable and are build out of other values, called fields and associated functionalities, called methods.
+Object is a value with associated type. Objects are immutable and are build out of other values called fields and associated functionalities called methods.
 
 
 ##Code layout
@@ -31,7 +30,7 @@ def main:
 ```
 
 ```ruby
-def main{
+def main {
     print "I'm using the braces-block layout!";
 }
 ```

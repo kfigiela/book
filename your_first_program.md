@@ -44,3 +44,7 @@ $ luna build --help
 ```
 
 You can also use the `run` command to evaluate the program without producing an executable, like `luna run Main`.
+
+#### Compiler pragmas
+
+!KF: odnosimy sie do nich pozniej, to chyba jest wlasciwe miejsce

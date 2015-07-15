@@ -88,6 +88,8 @@ There is though some boilerplate in the code. The `Default` variant is the only 
 def new type: type.Default ..
 ```
 
+KF: tu uzywamy curryingu, ktory nie zostal nigdzie **wczesniej** w ksiazce objasniony
+
 The function takes a type and calls its default constructor, passing all its parameters further to that constructor. It is especially useful with multi-constructor object types, where you just want to use the default constructor of a particular object type.
 
 ```ruby
@@ -162,6 +164,8 @@ Luna will reject the above definition, because both variants `Rectangle` and `Ci
 
 Luna does not support inheritance, but it allows overlapping classes instead.  It means, that a single object can belong to many classes at the same time. As we've mentioned earlier each object type is in fact a class definition, so the variants can be shared across multiple object definitions as well! You can use the `include` block exactly for this purpose. Every variant enumerated within the block will be included in the category of objects described by that particular object type.
 
+KF: odnosisz sie do classes, ktore w tym momencie nie zostaly jescze w booku zdefiniowane.
+
 ```ruby
 object BasicShape:
     pos :: Point = new Point 0 0
@@ -173,6 +177,8 @@ object Path:
     include: Rectangle Circle
     Segment: start end :: Point
 ```
+
+KF: tak jest czytelniej, wiadomo skad co sie bierze
 
 Now both `Rectangle` as well as `Circle` belong to `Shape` and `Path` object types at the same time. An important fact to note is that even if the variants belong to various object types, their type is `BasicShape`. So if you create a new `Rectangle` object, it will behave like every element of the `BasicShape` type unless stated otherwise. You will learn about transferring objects between categories later.
 

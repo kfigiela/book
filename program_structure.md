@@ -76,6 +76,7 @@ def main: v = Vector 1 2 3
     print $ checkVector v
 ```
 
+!KF: czytajac to jestem skonfundowany, if then else to jest wieloczlonowa funkcja czy element syntaxu? – jak sie maja wieloczlonowe nazwy do indentowania zatem? to nie jest jasne
 
 ###Braces-blocks
 The braces-blocks can be used to minimize the code and eliminate the indentation sensitive syntax. Braces-blocks require all the statements but the last one to be terminated using the semicolon terminator `;`. It is also possible to use the braces block as top-level program layout by enclosing the whole source code in braces:

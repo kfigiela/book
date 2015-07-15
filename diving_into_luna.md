@@ -1,5 +1,6 @@
 # Diving into Luna
 
+**!KF ja bym ta sekcje dal nieco pozniej**
 
 
 #Values and types
@@ -17,7 +18,7 @@ Luna allows some names to be declared as operators. Operator is just like a regu
 
 
 ##Multi-segment names
-Luna supports multi-segment names. It means, that you can use multiple identifiers as your variable or type name as long as they obey the naming convention rules. A good example is the multi-segment function `if then else`, which can be used the following way: `if a < b then 1 else 2`.
+Luna supports multi-segment names. It means, that you can use multiple identifiers as your variable or type name as long as they obey the naming convention rules. A good example is the multi-segment function `if then else`, which can be used the following way: `if a < b then 1 else 2`. **!KF: przyklad jak zdefinoiowac**
 
 You can access each multi-segment name just by surrounding it with backticks, like in the following example: ``` `if then else` (a<b) 1 2 ```, which is equivalent to the previous one.
 

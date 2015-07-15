@@ -131,6 +131,8 @@ It is also possible to treat a concrete value like its unit-class, so the follow
    [2]
 ```
 
+KF: tu sie pojawia syntactic sugar dla slownikow i tablic – powinien byc gdzies wyjasniony.
+
 You will learn more about dependent types in later chapters of this book. That was just an introduction to the way Category Oriented Programming treats the values and their types.
 
 ###The strict type operator

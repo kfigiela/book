@@ -21,7 +21,7 @@ Luna was designed as a high-level, high-performance, easy to use programming lan
 Luna supports multiple syntax representations, currently including text and visual one. Every program in the text form has its equivalent representation as a visual data-flow graph and vice-versa. Both forms are interchangeable and can be used simultaneously. There are plans to develop other source representations, including natural language one and sql-like queries.
 
 ###Multiple target platforms
-We believe in a very simple vision behind Luna - write once, use everywhere. Luna specification is target-platform independent. It is possible to compile the same Luna sources to various output targets, currently including fast machine code and JavaScript. More back-ends will be supported in the future, like Python, Java or Erlang one.
+We believe in a very simple vision behind Luna – write once, use everywhere. Luna specification is target-platform independent. It is possible to compile the same Luna sources to various output targets, currently including fast machine code and JavaScript. More back-ends will be supported in the future, like Python, Java or Erlang one.
 
 You can use Luna to both develop applications from scratch as well as create reusable components to existing projects. The optimization take place before target platform code generation, so Luna often produces faster code, than native language implementation.
 

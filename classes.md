@@ -1,10 +1,10 @@
 # Classes
 
-Classes are used to classify objects based on their properties and behaviors. You can learn more about the concept in the [Category Oriented Programming](category_oriented_programming.md) chapter. 
+Classes are used to classify objects based on their properties and behaviors. You can learn more about the concept in the [Category Oriented Programming](category_oriented_programming.md) chapter.
 
 Class definition is very similar to an object type definition. Classes describe properties and behaviors an object must provide in order to be considered the class member. Every object that meets the requirements belongs to the class even if there is no explicit statement about it in the code.
 
-A new class can be defined using the `class` function. Lets create our first, brand new, shiny class! 
+A new class can be defined using the `class` function. Lets create our first, brand new, shiny class!
 
 ```ruby
 class XY:
@@ -65,13 +65,13 @@ p :: Point (1 | 2)
 The signature means, that `p` is a value of type `Point`, which first type argument is either `1` or `2`. If we would like to express the detailed type dependency chain, we could write the following statement:
 
 ```ruby
-p :: Point.Default 1 2 
-  :: Point (1 | 2) 
-  :: Point Int 
-  :: Point Real 
-  :: Point Complex 
-  :: Point Number 
-  :: Point * 
+p :: Point.Default 1 2
+  :: Point (1 | 2)
+  :: Point Int
+  :: Point Real
+  :: Point Complex
+  :: Point Number
+  :: Point *
   :: *
 ```
 
@@ -95,7 +95,7 @@ def foo x:
 
 The above code defines a `foo` function, which takes an argument `x`, compares it to `0` and returns either string `'oh no!'` or the value of `x`. The function results thus in a value of a type `Int | 'oh no!'`, which is a subtype of a more general one `Int | String`. Such value inherits all the common behaviors of elements from both categories.
 
-The composed class allows for using any sensible method from all the component classes. Lets investigate this behavior using the Luna shell! 
+The composed class allows for using any sensible method from all the component classes. Lets investigate this behavior using the Luna shell!
 
 ```ruby
 λ: lst = [2, 'test']
@@ -135,7 +135,7 @@ Every object in Luna belongs to an infinite number of classes, especially to the
 λ: print String + Int
    String
 λ: print Int.show
-   String 
+   String
 ```
 This is a very powerful mechanism. It can be used for both type level programming as well as to bulk-process all values from a specific category. Lets assume we've got a heterogeneous dictionary and we want to obtain all the values, whose key is an integer:
 
@@ -172,7 +172,7 @@ alias Path = Rectangle | Circle | Segment
 ```
 
 
-The pipe operator `|` is used to combine classes together. Each object belongs to one or more class and for each object there is implicit declaration of its base class - the one containing objects of this particular variant only. The following code should be read the following way -- `Path` is a class defined as combination of classes `Rectangle`, `Circle` and `Segment`. In other words, `Path` is either a `Rectangle` or `Circle` or `Segment`. The whole example could be easy written using this notion exclusively:
+The pipe operator `|` is used to combine classes together. Each object belongs to one or more class and for each object there is implicit declaration of its base class – the one containing objects of this particular variant only. The following code should be read the following way — `Path` is a class defined as combination of classes `Rectangle`, `Circle` and `Segment`. In other words, `Path` is either a `Rectangle` or `Circle` or `Segment`. The whole example could be easy written using this notion exclusively:
 
 ```python
 class Rectangle: width height x=0 y=0 :: Float

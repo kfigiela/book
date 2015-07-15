@@ -350,7 +350,7 @@ The binary `|` operator allows prepending element to the list and it is a very f
 
 
 ####Strings
-A string is a list of Unicode characters. Strings can be spanned across multiple lines. All three popular line-endings (`CR`, `CRLF`, `LF`) are treated as a single `LF` byte, so multi-line strings behave always the same across the platforms. String is implemented using Luna list type, allowing at the same time all list-specific operations to be performed, including concatenation, length checking or index-based character accessing. Luna supports two type of string literals - regular and raw ones.
+A string is a list of Unicode characters. Strings can be spanned across multiple lines. All three popular line-endings (`CR`, `CRLF`, `LF`) are treated as a single `LF` byte, so multi-line strings behave always the same across the platforms. String is implemented using Luna list type, allowing at the same time all list-specific operations to be performed, including concatenation, length checking or index-based character accessing. Luna supports two type of string literals – regular and raw ones.
 
 #####Regular String literal
 Regular String literals are expressed as a char sequence enclosed in quotes `" "`. Escaping rules as described in Char section apply.

@@ -55,7 +55,7 @@ class Bool:
     False
 ```
 
-`True` and `False` are variants, completely distinct object definitions, but they share a common property - they are the only possible values of any Boolean expression. The objects does not carry any information, so their definition is quite simple.
+`True` and `False` are variants, completely distinct object definitions, but they share a common property – they are the only possible values of any Boolean expression. The objects does not carry any information, so their definition is quite simple.
 
 Much more interesting example would be to create custom rendering engine of some primitive shapes. Our renderer would support only two shapes for now, but we can easily extend it later:
 
@@ -89,7 +89,7 @@ Rectangle 200 100 0 0
 ##Classes
 In contrast to classical Object Oriented paradigm, classes in Luna do not explicitly shape the relations between objects. You can think about it like about a generalization of OOP model, where there is infinite amount of relations between objects and we choose the ones, that are useful at the moment. The relation between `Rectangle` and `Circle` is not defined anywhere in the code and there is infinite amount of possible relations to choose from, including the fact that both have properties of geometric figures or that they could be faster rasterized on GPU by our brand new renderer.
 
-Luna does not support inheritance, but it allows overlapping classes instead. It means, that objects can belong to many classes at the same time. Classes are just categories of objects in Luna. You have met some of them already, like the integer numbers. Each number is a distinct object, so the standard library defines somehow variants of `1`, `2`, `3`. Every time you write `7`, you are using the constructor named `7` of the variant `7`! There is also a class `Int`, which all the integer numbers belong to. But there is also another class `Real` containing the `Int` one! This is a great example of overlapping categories - every `Int` belongs to `Real` but not vice versa.
+Luna does not support inheritance, but it allows overlapping classes instead. It means, that objects can belong to many classes at the same time. Classes are just categories of objects in Luna. You have met some of them already, like the integer numbers. Each number is a distinct object, so the standard library defines somehow variants of `1`, `2`, `3`. Every time you write `7`, you are using the constructor named `7` of the variant `7`! There is also a class `Int`, which all the integer numbers belong to. But there is also another class `Real` containing the `Int` one! This is a great example of overlapping categories – every `Int` belongs to `Real` but not vice versa.
 
 Lets go back to our rendering engine. We want to provide some animation support in our library, so our objects could travel a predefined path. The path can be either a rectangle, circle or a segment between two points. We could try to define `Path` the following way:
 
@@ -114,7 +114,7 @@ class Segment: sx sy ex ey :: Float
 alias Path = Rectangle | Circle | Segment
 ```
 
-The pipe operator `|` is used to combine classes together. Each object belongs to one or more class and for each object there is implicit declaration of its base class - the one containing objects of this particular variant only. The following code should be read the following way -- `Path` is a class defined as combination of classes `Rectangle`, `Circle` and `Segment`. In other words, `Path` is either a `Rectangle` or `Circle` or `Segment`. The whole example could be easy written using this notion exclusively:
+The pipe operator `|` is used to combine classes together. Each object belongs to one or more class and for each object there is implicit declaration of its base class – the one containing objects of this particular variant only. The following code should be read the following way — `Path` is a class defined as combination of classes `Rectangle`, `Circle` and `Segment`. In other words, `Path` is either a `Rectangle` or `Circle` or `Segment`. The whole example could be easy written using this notion exclusively:
 
 ```python
 class Rectangle: width height x=0 y=0 :: Float

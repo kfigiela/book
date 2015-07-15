@@ -27,7 +27,7 @@ Although algebraic data types are proven to be a very powerful tool, they are un
 
 ###Variants
 Object type consist of a set of related data definitions, so called variants.
-Each variant has a distinct type being a subtype of the object type. You should think about variants like about distinct object definitions, grouped together in an object type based on some common properties. 
+Each variant has a distinct type being a subtype of the object type. You should think about variants like about distinct object definitions, grouped together in an object type based on some common properties.
 
 But wait a moment! Where are the variants of the `Point` object type defined? The `Point` object type contains a single object definition only. In such situation Luna generates the default variant `Default` implicitly. The default variant is generated only when there is no explicit variant declaration. The previous code is in fact translated to the following one:
 
@@ -39,7 +39,7 @@ object Point:
 
 Variant definition syntax is pretty simple. Every upper-case name in the top level of an object type body denotes new variant definition. Variant definition could contain any number of field definitions. Empty variant definitions describe objects, whose instances cannot carry any additional information.
 
-As you can see, if an object type consist of single variant only, Luna allows some nice syntax sugar. If you explicitly declare both the fields as well as the variants, every field declared in the object type level is just copied to the beginning of each variant definition. The methods are defined for all variants and are properties of the object type. 
+As you can see, if an object type consist of single variant only, Luna allows some nice syntax sugar. If you explicitly declare both the fields as well as the variants, every field declared in the object type level is just copied to the beginning of each variant definition. The methods are defined for all variants and are properties of the object type.
 
 So what does it mean that variants share some similar properties? To answer that question, lets look how `Bool` is defined in Luna's standard library!
 
@@ -49,7 +49,7 @@ object Bool:
     False
 ```
 
-The `True` and `False` variants are completely distinct object definitions, however they share a common property - they are the only possible values of any boolean expression. They do not declare any fields, so their definition is quite simple.
+The `True` and `False` variants are completely distinct object definitions, however they share a common property – they are the only possible values of any boolean expression. They do not declare any fields, so their definition is quite simple.
 
 ###Constructors
 
@@ -66,7 +66,7 @@ Every constructor except the `Default` one is exported to the object type declar
 
 As we can see, both `True` as well as `False` are functions taking no arguments, resulting in a value of the `Bool` type. The names `True` and `False` were used as both the constructor names as well as the variant types.
 
-That was simple, lets try to use the `Point`'s default constructor! For each variant field, there is a distinct input argument required by the constructor. If a field is provided with a default value, the corresponding constructor argument is optional. 
+That was simple, lets try to use the `Point`'s default constructor! For each variant field, there is a distinct input argument required by the constructor. If a field is provided with a default value, the corresponding constructor argument is optional.
 
 ```ruby
 λ: type of Point.Default
@@ -167,7 +167,7 @@ Now both `Rectangle` as well as `Circle` belong to `Shape` and `Path` object typ
 
 ### Pattern matching
 
-Pattern matching is an mechanism facilitating decomposition of objects. You can use pattern matching in several parts of code including the assignment expression and function definition. The syntax of a pattern match is analogous to using the constructor function, but instead of construction it allows the deconstruction of objects. 
+Pattern matching is an mechanism facilitating decomposition of objects. You can use pattern matching in several parts of code including the assignment expression and function definition. The syntax of a pattern match is analogous to using the constructor function, but instead of construction it allows the deconstruction of objects.
 
 Let's start with our `Student` object type!
 
@@ -259,4 +259,4 @@ There is yet another syntax form available for pattern matches. You can use the 
 λ: case num of
         1 ... 7 : print 'That was our lucky number!'
         _       : print 'Try again!'
-``` 
+```

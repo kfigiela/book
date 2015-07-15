@@ -1,6 +1,8 @@
 #The glorious Luna 1.0 Alpha documentation!
 
-Welcome to the Luna documentation. Please mind that this document is a mix of a tutorial and a formal specification and it often relies on examples and intuitive description. We strongly believe that tutorials are easier to read and understand that adequate formal documents.
+Welcome to the Luna documentation. Please mind that this book is a mix of a tutorial and a formal specification, often relying on examples and intuitive description. We strongly believe that tutorials are easier to read and understand that adequate formal documents.
+
+The online version of this book is available here: https://www.gitbook.com/book/wdanilo/luna.
 
 ###What is Luna?
 
